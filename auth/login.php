@@ -1,7 +1,8 @@
 <?php 
+//phpinfo();
 error_reporting(0); 
 session_start();
-unset($_SESSION["loginststus"]);
+unset($_SESSION["loginstatus"]);
 
 $user_name=$_POST["email"];
 $user_passward=$_POST["passward"];
@@ -11,9 +12,9 @@ if(isset($_POST['submitation']))
       if(!empty($user_name) && !empty($user_passward)  )
       {
 
-        if($_POST['email'] === 'admin@gmail.com' && $_POST['passward']==='123456')
+        if($_POST['email'] =='admin@gmail.com' && $_POST['passward']=='123456')
         {
-            $_SESSION["loginststus"]='yes';
+            $_SESSION["loginstatus"]='yes';
 
             print"<script>location='index.php?pages=patient-tracking'</script>";
         }

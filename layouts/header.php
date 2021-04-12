@@ -8,7 +8,7 @@
 					<li><a href="index.php?pages=patient-tracking">PATIENT TRACKING</a></li>
 					<li><a href="index.php?pages=contact-us">CONTACT US</a></li>
 					<?php if(isset($_GET['pages']) && $_GET['pages']=='patient-tracking'){?>
-					<li><a href="index.php?pages=login">Log Out</a></li>
+					<li><a href="index.php?pages=login">LOG OUT</a></li>
 					<?php }?>
 				</ul>
 				<ul class="social-list">

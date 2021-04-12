@@ -42,7 +42,7 @@
 			{	
 				error_reporting(0); 
 				session_start();
-					if($_SESSION["loginststus"]=='yes') {
+					if($_SESSION["loginstatus"]=='yes') {
 						include('pages/patient_tracking.php');
 					} else {
 						print"<script>location='index.php?pages=login'</script>";

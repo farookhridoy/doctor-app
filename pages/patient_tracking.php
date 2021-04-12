@@ -1,22 +1,20 @@
 <?php 
 error_reporting(0); 
 @session_start();
-if($_SESSION["loginststus"]=='yes')
+if($_SESSION["loginstatus"]=='yes')
 {
-
-	?>
+?>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<!-- JavaScript Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-	crossorigin="anonymous">
-</script> 
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script> 
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<link rel="stylesheet" href="public/css/test.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link rel="stylesheet" href="public/css/test.css" type="text/css">
 
 <div class="test_start">
 
@@ -30,7 +28,7 @@ if($_SESSION["loginststus"]=='yes')
 			<input type="numeric" id="mobile" class="form-control">
 		</div>
 		<div>
-			<p>Geo Location</p>
+			<p>Area</p>
 			<input type="text" id="location" class="form-control" class="form-control">
 		</div>
 	</section>
@@ -45,9 +43,9 @@ if($_SESSION["loginststus"]=='yes')
 	<div class="sym_all">
 		<p> <label for="fever"><input type="checkbox" id="fever" name="question" value="fever"> la Is your body temperature 103° -105° or higher?</label></p>
 
-		<p><label for="runny_nose"><input type="checkbox" id="runny_nose" name= "question" value="runny_nose" > Is your body temperature is lower than normal?</label></p>
+		<p><label for="low_temp"><input type="checkbox" id="low_temp" name= "question" value="low_temp" > Is your body temperature is lower than normal?</label></p>
 
-		<p><label for="caugh"><input type="checkbox" id="caugh" name= "question" value="caugh" > Do you have runny nose or cough?</label></p>
+		<p><label for="caugh_runny_nose"><input type="checkbox" id="caugh_runny_nose" name= "question" value="caugh_runny_nose" > Do you have runny nose or cough?</label></p>
 
 		<p><label for="vomiting"><input type="checkbox" id="vomiting" name= "question" value="vomiting"> Do you feel nauseous or vomiting?</label></p>
 
@@ -72,8 +70,8 @@ if($_SESSION["loginststus"]=='yes')
 		var dengue_before=$(".dengue_before:checked").val();
 
 		var fever=$("#fever").is(':checked');
-		var runny_nose=$("#runny_nose").is(':checked');
-		var caugh=$("#caugh").is(':checked');
+		var low_temp=$("#low_temp").is(':checked');
+		var caugh_runny_nose=$("#caugh_runny_nose").is(':checked');
 		var vomiting=$("#vomiting").is(':checked');
 		var rash=$("#rash").is(':checked');
 		var bleeding=$("#bleeding").is(':checked');
@@ -82,21 +80,32 @@ if($_SESSION["loginststus"]=='yes')
 		var message='';
 		if (name!='' && mobile !='' && dengue_before != ''){
 
-			if(dengue_before == 0){
-				if(caugh){
+			if(caugh_runny_nose && fever  && vomiting && bleeding && pressure && rash && low_temp){
+					alertMe('<h6>Message : You should go to doctor.</h6>');
+				}
+				else if(fever){
+					alertMe('<h6>Message : You should go to doctor.</h6>');
+				}
+				else if(caugh_runny_nose){
 					alertMe('It can be viral disease(flu). Consult a doctor','danger');
 				}
-			}else if(dengue_before == 1){
-				if(fever && vomiting){
+				else if(fever && vomiting){
 					alertMe('<h1>Classic Fever</h1><hr><h6>Message: You should consult a doctor. Drink a lot of liquied juice and pure water. Don,t eat any pain killer or antibiotic medicine or several types of medicine without consulting doctor.</h6>');
-				}else if(bleeding){
-					alertMe('<h1>Hemoregic</h1>');
-				}else if(pressure){
+				}
+				else if(bleeding){
+					alertMe('<h1>Hemoregic</h1>','danger');
+				}
+				else if(pressure){
 					alertMe('<h1>Shock Syndrom </h1>');
-				}else if(runny_nose){
+				}
+				else if(low_temp){
 					alertMe('<h1>Risk </h1><hr><h6>Message : You should go to doctor as early as possible</h6>');
 				}
-			}
+				else{
+
+					alertMe('<h1>Sorry ! </h1><hr><h6>Message : Please Select one syndrom</h6>');
+				}
+			
 
 		}else{
 			alertMe('Please Enter your Name,Mobile & Atleast One Option','danger');
@@ -105,6 +114,7 @@ if($_SESSION["loginststus"]=='yes')
 	});
 
 </script>
+
 
 <?php 
 }

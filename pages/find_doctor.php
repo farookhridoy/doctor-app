@@ -18,13 +18,13 @@
         <li>
             <a href="feature-list">
                 <img class="feature-icon" src="public/images/Screenshot 1.png" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
-                <h3 class="fetute-title">অধ্যাপক ড মোঃ রেদোয়ানুর রহমান</h3>
-                <h5 class="feature-title1">সংক্রামক রোগ ও ডেঙ্গু রোগ বিশেষজ্ঞ</h5>
+                <h3 class="fetute-title">Proffesor Dr Md Redwanur Rahman</h3>
+                <h5 class="feature-title1">Infectious disease and dengue specialist</h5>
             </a>
             <a href="feature-list">
                 <img class="feature-icon" src="public/images/Akterruzaman1.jpg" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
-                <h3 class="fetute-title">এম এম আক্তারুজ্জামান</h3>
-                <h5 class="feature-title1">ম্যালেরিয়া এবং এডিস সংক্রামণকারী রোগ নিয়ন্ত্রণকারী ব্যবস্থাপক</h5>
+                <h3 class="fetute-title">M M Aktaruzzaman</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
@@ -32,8 +32,8 @@
         <li>
             <a href="feature-list">
                 <img class="feature-icon" src="public/images/Akterruzaman1.jpg" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
-                <h3 class="fetute-title">এম এম আক্তারুজ্জামান</h3>
-                <h5 class="feature-title1">ম্যালেরিয়া এবং এডিস সংক্রামণকারী রোগ নিয়ন্ত্রণকারী ব্যবস্থাপক</h5>
+                <h3 class="fetute-title">M M Aktaruzzaman</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
@@ -42,6 +42,7 @@
             <a href="feature-list">
                 <img class="feature-icon" src="public/images/leong-hoe-namf83cdf7749bf63eeab9aff0b00dba087.png" alt="web design" hight= "80px" weight ="90px"style="width:100%"/>
                 <h3 class="fetute-title">GRAPIC DESIGN</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
@@ -50,6 +51,7 @@
             <a href="#">
                 <img class="feature-icon" src="public/images/maxresdefault1.jpg" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
                 <h3 class="fetute-title">VIDEO PRODUCTION</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
@@ -58,6 +60,7 @@
             <a href="#">
                 <img class="feature-icon" src="public/images/sharada-shekar-internal-medicine-specialist.jpg" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
                 <h3 class="fetute-title">VIDEO PRODUCTION</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
@@ -66,6 +69,7 @@
             <a href="#">
                 <img class="feature-icon" src="public/images/dr-farhan-fazal-dengue-fever1.jpg" alt="web design" hight= "80px" weight ="90px" style="width:100%"/>
                 <h3 class="fetute-title">VIDEO PRODUCTION</h3>
+                <h5 class="feature-title1">Malaria and Aedes Infectious Diseases Control Manager</h5>
             </a>
         </li>
     </ul>
