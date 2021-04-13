@@ -15,10 +15,24 @@ if($_SESSION["loginstatus"]=='yes')
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<link rel="stylesheet" href="public/css/test.css" type="text/css">
-
+<style>
+    #map-canvas {
+  height: 400px;
+  margin: 0px;
+  padding: 0px
+}
+.tile {
+  border: 1px solid #aaa;
+}
+.tile span {
+  background: #fff;
+  font: 12px Monospace;
+}
+</style>
 <div class="test_start">
-
-	<section>
+<div class="row">
+    <div class="col-md-6">
+        	<section>
 		<div>
 			<p>Name</p>
 			<input type="text" id="name" class="form-control">
@@ -27,10 +41,7 @@ if($_SESSION["loginstatus"]=='yes')
 			<p>Mobile No</p>
 			<input type="numeric" id="mobile" class="form-control">
 		</div>
-		<div>
-			<p>Area</p>
-			<input type="text" id="location" class="form-control" class="form-control">
-		</div>
+		
 	</section>
 	<p class="confution">Have you ever had dengue before?</p>
 	<div class="confution_test">
@@ -41,7 +52,7 @@ if($_SESSION["loginstatus"]=='yes')
 	</div>
 	<p class="symtoms">Which of the following symptoms are being observed in you?</p>
 	<div class="sym_all">
-		<p> <label for="fever"><input type="checkbox" id="fever" name="question" value="fever"> la Is your body temperature 103° -105° or higher?</label></p>
+		<p> <label for="fever"><input type="checkbox" id="fever" name="question" value="fever"> la Is your body temperature 103째 -105째 or higher?</label></p>
 
 		<p><label for="low_temp"><input type="checkbox" id="low_temp" name= "question" value="low_temp" > Is your body temperature is lower than normal?</label></p>
 
@@ -60,12 +71,20 @@ if($_SESSION["loginstatus"]=='yes')
 
 </div>
 
+    <div class="col-md-6">
+        <p>Area</p>
+			<!--<input type="text" id="location" class="form-control" class="form-control">-->
+			<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+            <div id="map-canvas"></div>
+    </div>
+</div>
+</div>
 <script>
 	$('#submit').click(function() {
 
 		var name=$('#name').val();
 		var mobile=$('#mobile').val();
-		var location=$('#location').val();
+		//var location=$('#location').val();
 
 		var dengue_before=$(".dengue_before:checked").val();
 
@@ -112,6 +131,29 @@ if($_SESSION["loginstatus"]=='yes')
 			playTone('danger');
 		}
 	});
+	
+	//google map initialization
+	
+
+
+ function initialize() {
+      var myLatlng = new google.maps.LatLng(24.89904, 91.87198);
+      var myOptions = {
+        zoom: 8,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+    }
+
+    function loadScript() {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "http://maps.google.com/maps/api/js?sensor=false&callback=initialize";
+      document.body.appendChild(script);
+    }
+
+    window.onload = loadScript;
 
 </script>
 
