@@ -52,9 +52,9 @@ if($_SESSION["loginstatus"]=='yes')
 	</div>
 	<p class="symtoms">Which of the following symptoms are being observed in you?</p>
 	<div class="sym_all">
-		<p> <label for="fever"><input type="checkbox" id="fever" name="question" value="fever"> la Is your body temperature 103째 -105째 or higher?</label></p>
+		<p> <label for="fever"><input type="checkbox" id="fever" name="question" value="fever">:  Is your body temperature is 101C - 105C or higher?</label></p>
 
-		<p><label for="low_temp"><input type="checkbox" id="low_temp" name= "question" value="low_temp" > Is your body temperature is lower than normal?</label></p>
+		<p><label for="low_temp"><input type="checkbox" id="low_temp" name= "question" value="low_temp" >:  Is your body temperature is lower than normal?</label></p>
 
 		<p><label for="caugh_runny_nose"><input type="checkbox" id="caugh_runny_nose" name= "question" value="caugh_runny_nose" > Do you have runny nose or cough?</label></p>
 
@@ -99,26 +99,29 @@ if($_SESSION["loginstatus"]=='yes')
 		var message='';
 		if (name!='' && mobile !='' && dengue_before != ''){
 
-			if(caugh_runny_nose && fever  && vomiting && bleeding && pressure && rash && low_temp){
-					alertMe('<h6>Message : You should go to doctor.</h6>');
+			    if(caugh_runny_nose && fever  && vomiting && bleeding  && pressure && rash && low_temp){
+					alertMe('<h6>You should go to Doctor.</h6>');
 				}
-				else if(fever){
-					alertMe('<h6>Message : You should go to doctor.</h6>');
+				else if(fever && !vomiting){
+					alertMe('<h6>You should consult with a doctor</h6>');
 				}
-				else if(caugh_runny_nose){
-					alertMe('It can be viral disease(flu). Consult a doctor','danger');
+				else if(caugh_runny_nose && !fever  && !vomiting && !bleeding  && !pressure && !rash && !low_temp){
+					alertMe('It can be viral disease(flu). Consult a doctor');
 				}
-				else if(fever && vomiting){
-					alertMe('<h1>Classic Fever</h1><hr><h6>Message: You should consult a doctor. Drink a lot of liquied juice and pure water. Don,t eat any pain killer or antibiotic medicine or several types of medicine without consulting doctor.</h6>');
+				else if(fever && vomiting && !caugh_runny_nose && !bleeding  && !pressure && !rash && !low_temp){
+					alertMe('<h1>Classic Fever</h1><hr><h6>You should consult a doctor. Drink a lot of liquid juice and pure water. Do not eat any pain killer, antibiotic or several types of medicine without consulting a doctor.</h6>');
 				}
-				else if(bleeding){
-					alertMe('<h1>Hemoregic</h1>','danger');
+				else if(bleeding && !fever && !vomiting && !caugh_runny_nose  && !pressure && !rash && !low_temp){
+					alertMe('<h6>you consult a doctor as early as possible</h6>','danger');
 				}
-				else if(pressure){
-					alertMe('<h1>Shock Syndrom </h1>');
+				else if(pressure && !fever && !vomiting && !caugh_runny_nose && !bleeding  && !rash && !low_temp){
+					alertMe('<h6>You should consult a doctor as early as possible.</h6>');
 				}
-				else if(low_temp){
-					alertMe('<h1>Risk </h1><hr><h6>Message : You should go to doctor as early as possible</h6>');
+				else if(low_temp && !pressure && !fever && !vomiting && !caugh_runny_nose && !bleeding  && !rash ){
+					alertMe('<h6>You should consult a doctor as early as possible.</h6>');
+				}
+				else if(!low_temp && !pressure && !fever && !vomiting && !caugh_runny_nose && !bleeding  && rash ){
+					alertMe('<h6>You should consult a doctor as early as possible.</h6>');
 				}
 				else{
 

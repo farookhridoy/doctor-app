@@ -307,10 +307,10 @@ header h3 {
     margin-right: 0;
 }
 
-.port-laptops {background: url('../images/electric_bat.jpg') center no-repeat;}
-.port-acme { background: url('../images/images2.jpg') center  no-repeat;}
-.port-demoreel { background: url('../images/images3.jpg') center  no-repeat;}
-.port-logo { background: url('../images/images4.jpg') center  no-repeat;}
+.port-laptops {background: url('../images/electric_bat.jpg') center no-repeat;background-size: cover;}
+.port-acme { background: url('../images/images2.jpg') center  no-repeat;background-size: cover;}
+.port-demoreel { background: url('../images/images3.jpg') center  no-repeat;background-size: cover;}
+.port-logo { background: url('../images/images4.jpg') center  no-repeat;background-size: cover;}
 
 .portfolio-list li span {
     position: absolute;

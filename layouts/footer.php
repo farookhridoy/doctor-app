@@ -1,14 +1,14 @@
 <footer>
     <div class="container">
         <div class="col-one-third">
-            <h3>From the Blog</h3>
+            <h3>Work with us</h3>
             <dl class="footer-list">
-                <dt>Lorem ipsum dolor sit</dt>
-                <dd>lorem ipsum dolor</dd>
-                <dt>on march 10, 2020</dt>
-                <dd>Consectatur Adispiscing Elit</dd>
-                <dt>contact</dt>
-                <dd>view all</dd>
+                <dt>Vacancies</dt>
+                <dd>Fellowships</dd>
+                <dt>Traineeships</dt>
+                <dd>Procurement and grants</dd>
+               <!--  <dt>contact</dt>
+                <dd>view all</dd> -->
             </dl>
         </div>
         <div class="col-one-third">

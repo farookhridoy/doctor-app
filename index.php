@@ -105,7 +105,7 @@
 
 	function alertMe(message, type){
 		$.alert({
-			title: (type == "success" ? "Success" : "Whoops"),
+			title: (type == "success" ? "Success" : "Suggestion"),
 			icon: 'fa fa-'+(type == "success" ? "check" : "ban"),
 			type: (type == "success" ? 'green' : 'red'),
 			columnClass: 'medium',

@@ -1,11 +1,14 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
 
-
 body{
-     background: url('../images/docdoc.jpg') no-repeat;
+    margin: 0;
+    padding: 0;
 }
-.login_box{
+.doctor-banner{
+  
+}
+/*.login_box{
     
     position: relative;
     
@@ -59,4 +62,4 @@ input .in{
     cursor: pointer;
     margin: 12px;
 
-}
+}*/
